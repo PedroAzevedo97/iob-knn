@@ -44,13 +44,13 @@ module knn_tb;
    end
    
    //instantiate knn core
-   knn_core knn0
-     (
-      .KNN_ENABLE(KNN_ENABLE),
-      .KNN_SAMPLE(KNN_SAMPLE),
-      .KNN_VALUE(KNN_VALUE),
-      .clk(clk),
-      .rst(rst)
-      );   
+   //knn_core knn0
+     //(
+      //.KNN_ENABLE(KNN_ENABLE),
+      //.KNN_SAMPLE(KNN_SAMPLE),
+      //.KNN_VALUE(KNN_VALUE),
+      //.clk(clk),
+      //.rst(rst)
+      //);   
 
 endmodule
