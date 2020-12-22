@@ -2,11 +2,14 @@ include $(KNN_DIR)/core.mk
 
 #define
 DEFINE+=$(defmacro) DATA_W=32
+DEFINE+=$(defmacro) DATASET_SIZE=100
+DEFINE+=$(defmacro) LABEL_SIZE=8
+DEFINE+=$(defmacro) NEIGHBOURS_NR=20
 
 #include
 INCLUDE+=$(incdir) $(KNN_HW_INC_DIR)
 INCLUDE+=$(incdir) $(LIB_DIR)/hardware/include
-INCLUDE+=$(incdir) $(INTERCON_DIR)/hardware/include 
+INCLUDE+=$(incdir) $(INTERCON_DIR)/hardware/include
 
 #headers
 VHDR+=$(wildcard $(KNN_HW_INC_DIR)/*.vh)

@@ -2,6 +2,7 @@
 #include "periphs.h"
 #include <iob-uart.h>
 #include "iob_timer.h"
+//#include "iob-knn-interface.c"
 #include "iob_knn.h"
 #include "random.h" //random generator for bare metal
 
@@ -137,7 +138,7 @@ unsigned int tempo_dist[M],tempo_vote[M],tempo_insert[M];
   //compute distances to dataset points
 
   timer_init(TIMER_BASE);
-
+  knn_init(KNN_BASE)
 #ifdef DEBUG
     //uart_printf("\n\nProcessing x[%d]:\n", k);
 #endif
