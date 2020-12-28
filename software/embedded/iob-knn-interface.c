@@ -20,10 +20,13 @@ void knn_stop() {
 
 
 void knn_init(int base_address) {
-  //capture base address for good
   base = base_address;
   knn_reset();
-  knn_start();
+  //knn_start();
 }
+
+
+
+
 
 /* Temos de criar Funções para o KNN*/

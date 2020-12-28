@@ -4,7 +4,11 @@
 reg KNN_RESET; //Timer soft reset
 reg KNN_ENABLE; //Timer enable
 
-reg [DATA_W-1:0] KNN_TEST_POINT; // Fetch test point
-reg [LABEL_SIZE-1:0] KNN_TEST_LABEL; //Label test point
-reg [DATA_W-1:0] KNN_DATASET [DATASET_SIZE-1:0]; //Vai buscar o Dataset (temos de alterar o nº)
-reg [LABEL_SIZE-1:0] KNN_LABEL_SET [DATASET_SIZE-1:0]; // Label test array
+`SWREG_W(KNN_RESET, 1, 0)
+`SWERG_W(KNN_ENABLE,1,0)
+
+`SWREG_W(KNN_TEST_POINT,DATA_W,0) // Resgisto para o test point
+`SWREG_W(KNN_TEST_LABEL,LABEL_W,0) // Label do test point
+`SWREG_BANKW(KNN_DATASET,DATA_W,0,DATASET_SIZE) // Banco de registos com os valores do Dataset
+`SWREG_BANKR(KNN_LABEL_SET, LABEL_W,0,DATASET_SIZE) // Label 
+

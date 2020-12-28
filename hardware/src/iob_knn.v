@@ -31,6 +31,7 @@ module iob_knn
    `SIGNAL(y1, DATA_W) //internal y
    `SIGNAL(y2, DATA_W) //internal y
 
+
    //
    //BLOCK 64-bit time counter & Free-running 64-bit counter with enable and soft reset capabilities
    //
@@ -56,24 +57,10 @@ module iob_knn
          y2={$random}%1000;
          #1
          distances[i]=KNN_VALUE;
-         $display("Coordenates x1: %d  x2: %d  y1: %d  y2: %d Distance %d",x1, x2, y1, y2, KNN_VALUE);
       end
       
       
       //ORDENAR DISTANCIAS
-      for (i=0; i<99; i=i+1) begin 
-        for(j=0; j<99-i; j=j+1) begin
-          if(distances[j]>distances[j+1]) begin
-            bubble=distances[j];
-            distances[j]=distances[j+1];
-            distances[j+1]=bubble;
-          end
-        end
-      end
-      
-          
-      for (i=0; i<100; i=i+1)
-        $display("Distance %d: %d", i+1, distances[i]);
         
 
       @(posedge clk) #100 $finish;
@@ -83,13 +70,14 @@ module iob_knn
    knn_core knn0
      (
       .KNN_ENABLE(KNN_ENABLE),
+      .DATA_POINT(KNN_DATASET),
+      .TEST_POINT(KNN_TEST_POINT),
       .clk(clk),
       .rst(rst_int),
       .x1(x1),
       .x2(x2),
       .y1(y1),
-      .y2(y2),
-      .z(KNN_VALUE)
+      .y2(y2)
       );
    
    

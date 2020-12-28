@@ -9,8 +9,8 @@
 `ifndef NEIGHBOUR_NR				//Neighbor number
  `define NEIGHBOUR_NR 20      // Numero de pontos na vizinhanca
 `endif
-`ifndef LABEL_SIZE			
- `define LABEL_SIZE 8      // Tamanho dos rotulos em bits
+`ifndef LABEL_W			
+ `define LABEL_W 8      // Tamanho dos rotulos em bits
 `endif
 
 
