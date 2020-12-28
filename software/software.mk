@@ -20,4 +20,3 @@ SRC+=$(KNN_SW_DIR)/*.c
 $(KNN_SW_DIR)/KNNsw_reg.h: $(KNN_HW_INC_DIR)/KNNsw_reg.v
 	$(LIB_DIR)/software/mkregs.py $< SW
 	mv KNNsw_reg.h $@
-
